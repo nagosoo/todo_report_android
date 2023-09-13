@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="text_mapoagape_18" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:fontWeight">400</item>
+        <item name="android:fontFamily">@font/font_family_mapoagape</item>
+    </style>
+
+    <style name="text_mapoagape_20" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:fontWeight">400</item>
+        <item name="android:fontFamily">@font/font_family_mapoagape</item>
+    </style>
+
+    <style name="text_barenbatang_16" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:fontWeight">500</item>
+        <item name="android:fontFamily">@font/font_family_bareunbatang</item>
+    </style>
+
+    <style name="text_barenbatang_20_normal" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:fontWeight">500</item>
+        <item name="android:fontFamily">@font/font_family_bareunbatang</item>
+    </style>
+
+    <style name="text_barenbatang_20_semi_bold" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:fontWeight">600</item>
+        <item name="android:fontFamily">@font/font_family_bareunbatang</item>
+        <item name="fontFamily">@font/font_family_bareunbatang</item>
+    </style>
+
+    <style name="text_barenbatang_40" parent="android:TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_40</item>
+        <item name="android:fontWeight">700</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:fontFamily">@font/font_family_bareunbatang</item>
+    </style>
+</resources>

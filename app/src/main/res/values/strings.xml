@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">todo_project_android</string>
+    <string name="결과보고서">결과보고서</string>
+    <string name="제출하고_나가기">제출하고\n나가기</string>
+    <string name="보완사항_및_평가">"보 완 사 항    및    평 가"</string>
+</resources>
