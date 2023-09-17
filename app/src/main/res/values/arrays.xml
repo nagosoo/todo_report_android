@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="stamp_drawables">
+        <item>@drawable/stamp_0</item>
+        <item>@drawable/stamp_1</item>
+        <item>@drawable/stamp_2</item>
+        <item>@drawable/stamp_3</item>
+        <item>@drawable/stamp_4</item>
+        <item>@drawable/stamp_5</item>
+        <item>@drawable/stamp_6</item>
+        <item>@drawable/stamp_7</item>
+        <item>@drawable/stamp_8</item>
+        <item>@drawable/stamp_9</item>
+        <item>@drawable/stamp_10</item>
+        <item>@drawable/stamp_11</item>
+        <item>@drawable/stamp_12</item>
+        <item>@drawable/stamp_13</item>
+        <item>@drawable/stamp_14</item>
+        <item>@drawable/stamp_15</item>
+        <item>@drawable/stamp_16</item>
+        <item>@drawable/stamp_17</item>
+        <item>@drawable/stamp_18</item>
+        <item>@drawable/stamp_19</item>
+        <item>@drawable/stamp_20</item>
+        <item>@drawable/stamp_21</item>
+        <item>@drawable/stamp_22</item>
+        <item>@drawable/stamp_23</item>
+        <item>@drawable/stamp_24</item>
+        <item>@drawable/stamp_25</item>
+        <item>@drawable/stamp_26</item>
+        <item>@drawable/stamp_27</item>
+        <item>@drawable/stamp_28</item>
+        <item>@drawable/stamp_29</item>
+        <item>@drawable/stamp_30</item>
+        <item>@drawable/stamp_31</item>
+        <item>@drawable/stamp_32</item>
+        <item>@drawable/stamp_33</item>
+        <item>@drawable/stamp_34</item>
+        <item>@drawable/stamp_35</item>
+        <item>@drawable/stamp_36</item>
+        <item>@drawable/stamp_37</item>
+        <item>@drawable/stamp_38</item>
+        <item>@drawable/stamp_39</item>
+        <item>@drawable/stamp_40</item>
+        <item>@drawable/stamp_41</item>
+        <item>@drawable/stamp_42</item>
+        <item>@drawable/stamp_43</item>
+        <item>@drawable/stamp_44</item>
+        <item>@drawable/stamp_45</item>
+        <item>@drawable/stamp_46</item>
+    </array>
+</resources>
