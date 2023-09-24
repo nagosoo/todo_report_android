@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setOnClickListener() {
         binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val month = month + 1
-            val date = "$year-$month-$dayOfMonth"
+            val date = "$year-${month + 1}-$dayOfMonth"
             val intent = Intent(this, ReportActivity::class.java)
+            intent.putExtra("date"  , date)
             startActivity(intent)
         }
     }
