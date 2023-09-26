@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.eunji.todo_project_android.model.Rating
 import com.eunji.todo_project_android.model.Todo
 import com.eunji.todo_project_android.repository.TodoRepository
 import kotlinx.coroutines.flow.SharingStarted
@@ -38,6 +39,8 @@ class ReportViewModel(
     private val _stamp = MutableLiveData<MutableList<Int?>>(mutableListOf())
     val stamp: LiveData<MutableList<Int?>> = _stamp
 
+    lateinit var rating: Rating
+
     fun setPlan(plan: String) {
         todoList.value?.let { list ->
             list[index.value!!].plan = plan
@@ -48,7 +51,8 @@ class ReportViewModel(
     fun setTodos(todoList: MutableList<Todo>) {
         _todoList.value = todoList
         todoList.map { todo ->
-            _stamp.value?.add(todo.stampIndex) }
+            _stamp.value?.add(todo.stampIndex)
+        }
     }
 
     fun getTodos(date: String): StateFlow<List<Todo>> {
@@ -79,5 +83,20 @@ class ReportViewModel(
 
     fun setIndex(index: Int) {
         _index.value = index
+    }
+
+    fun getRating(date: String): StateFlow<Rating?> {
+        return repository.getRating(date)
+            .stateIn(
+                viewModelScope,
+                SharingStarted.WhileSubscribed(5000),
+                Rating(date = date)
+            )
+    }
+
+    fun saveRating() = viewModelScope.launch {
+        repository.insertRating(
+            rating
+        )
     }
 }

@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.eunji.todo_project_android.model.Rating
 import com.eunji.todo_project_android.model.Todo
 import kotlinx.coroutines.flow.Flow
 
@@ -23,4 +24,10 @@ interface TodoDao {
 
     @Query("SELECT * FROM todo where date = :date")
     fun getTodos(date:String): Flow<List<Todo>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertRating(rating: Rating)
+
+    @Query("SELECT * FROM rating where date = :date")
+    fun getRating(date:String): Flow<Rating?>
 }

@@ -37,15 +37,17 @@
             android:text="@string/보완사항_및_평가"
             android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/textview_rating"
+        <EditText
+            android:id="@+id/edittext_rating"
             style="@style/text_mapoagape_18"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:background="@drawable/bg_border_black_without_top"
             android:gravity="center"
             android:textAlignment="center"
-            tools:text="놀만큼 놀았다.\n이제 할일을 하자." />
+            tools:text="놀만큼 놀았다.\n이제 할일을 하자."
+            android:autofillHints="false"
+            android:inputType="none" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

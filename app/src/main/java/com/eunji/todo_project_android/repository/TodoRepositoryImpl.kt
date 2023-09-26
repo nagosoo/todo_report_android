@@ -1,5 +1,6 @@
 package com.eunji.todo_project_android.repository
 
+import com.eunji.todo_project_android.model.Rating
 import com.eunji.todo_project_android.model.Todo
 import com.eunji.todo_project_android.room.TodoDatabase
 import kotlinx.coroutines.flow.Flow
@@ -22,5 +23,13 @@ class TodoRepositoryImpl(
 
     override fun getTodos(date: String): Flow<List<Todo>> {
         return todoDatabase.todoDao().getTodos(date)
+    }
+
+    override suspend fun insertRating(rating: Rating) {
+        todoDatabase.todoDao().insertRating(rating)
+    }
+
+    override fun getRating(date: String): Flow<Rating?> {
+        return todoDatabase.todoDao().getRating(date)
     }
 }
