@@ -69,9 +69,9 @@ class ReportActivity : AppCompatActivity() {
 
     private fun onClickListener() {
         binding.layoutTop.buttonSubmit.setOnClickListener {
+            onBackPressed()
             viewModel.saveTodos()
             viewModel.saveRating()
-            onBackPressed()
         }
     }
 

@@ -16,7 +16,15 @@
             android:id="@+id/layout_top"
             layout="@layout/layout_top" />
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"/>
+
+        <include
+            layout="@layout/item_title" />
+
         <androidx.recyclerview.widget.RecyclerView
+            android:nestedScrollingEnabled="false"
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
