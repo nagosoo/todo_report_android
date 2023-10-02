@@ -15,7 +15,7 @@ object StampUtil {
         val stampDrawableList = mutableListOf<Drawable>()
         val drawableIds = applicationContext().resources.obtainTypedArray(R.array.stamp_drawables)
 
-        for (i in 0..46) {
+        for (i in 0..54) {
             drawableIds.getDrawable(i)?.let { drawable ->
                 stampDrawableList.add(drawable)
             }

@@ -27,7 +27,7 @@ class RecyclerViewAdapter(
             }
             binding.buttonStamp.apply {
                 setImageDrawable(todoList[adapterPosition].stampIndex?.let {
-                    StampUtil.stampList[it]
+                    if (it == 0) null else StampUtil.stampList[it]
                 })
                 setOnClickListener {
                     stampClickListener(adapterPosition)
