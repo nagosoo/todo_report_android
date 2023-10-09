@@ -10,7 +10,7 @@ import com.eunji.todo_project_android.util.StampUtil
 
 class RecyclerViewAdapter(
     private val stampClickListener: (Int) -> Unit,
-    private val setOnTextChanged: (String?, Int) -> Unit,
+    private val planTextChangeListener: (String?, Int) -> Unit,
 ) : RecyclerView.Adapter<RecyclerViewAdapter.TodoReportViewHolder>() {
 
 
@@ -22,7 +22,7 @@ class RecyclerViewAdapter(
             binding.editText.apply {
                 setText(todoList[adapterPosition].plan)
                 addTextChangedListener {
-                    setOnTextChanged(it.toString(), adapterPosition)
+                    planTextChangeListener(it.toString(), adapterPosition)
                 }
             }
             binding.buttonStamp.apply {

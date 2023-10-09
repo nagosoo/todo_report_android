@@ -17,6 +17,7 @@ import com.eunji.todo_project_android.model.Rating
 import com.eunji.todo_project_android.model.Todo
 import com.eunji.todo_project_android.repository.TodoRepositoryImpl
 import com.eunji.todo_project_android.room.TodoDatabase
+import com.eunji.todo_project_android.util.Const.planCnt
 import com.eunji.todo_project_android.util.DateUtil
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -46,7 +47,7 @@ class ReportActivity : AppCompatActivity() {
         observeData()
         onClickListener()
 
-        binding.layoutTop.tvDate.text = "작성일자: $date"
+        binding.layoutTop.tvDate.text = "${getString(R.string.작성일자)} $date"
         binding.edittextRating.addTextChangedListener {
             viewModel.rating.rating = it.toString()
         }
@@ -76,19 +77,19 @@ class ReportActivity : AppCompatActivity() {
     }
 
     private fun observeData() {
-        viewModel.stamp.observe(this) { stamp ->
-            viewModel.index.value?.let {
+        viewModel.stamp.observe(this) { _ ->
+            viewModel.index.value?.let {todo->
                 adapter.todoList = viewModel.todoList.value!!
-                adapter.notifyItemChanged(it)
+                adapter.notifyItemChanged(todo)
             }
         }
     }
 
     private fun setRecyclerView() {
-        adapter = RecyclerViewAdapter(::setOnStampViewClicked, ::setOnPlanViewClicked)
+        adapter = RecyclerViewAdapter(::setOnStampChangeEvent, ::setOnPlanChangeEvent)
         binding.recyclerview.adapter = adapter
         setRecyclerViewDivider()
-        var list = MutableList(10) { Todo(date = date) }
+        var list = MutableList(planCnt) { Todo(date = date) }
         this.lifecycleScope.launch {
             this@ReportActivity.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.getTodos(date).collectLatest {
@@ -112,13 +113,13 @@ class ReportActivity : AppCompatActivity() {
         }
     }
 
-    private fun setOnStampViewClicked(index: Int) {
+    private fun setOnStampChangeEvent(index: Int) {
         viewModel.setIndex(index)
         val bottomSheet = StampBottomSheetDialogFragment()
         bottomSheet.show(supportFragmentManager, null)
     }
 
-    private fun setOnPlanViewClicked(text: String?, index: Int) {
+    private fun setOnPlanChangeEvent(text: String?, index: Int) {
         viewModel.setIndex(index)
         viewModel.setPlan(text ?: "")
     }

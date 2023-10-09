@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.eunji.todo_project_android.model.Rating
 import com.eunji.todo_project_android.model.Todo
 import com.eunji.todo_project_android.repository.TodoRepository
+import com.eunji.todo_project_android.util.Const.planCnt
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
@@ -60,7 +61,7 @@ class ReportViewModel(
             .stateIn(
                 viewModelScope,
                 SharingStarted.WhileSubscribed(5000),
-                MutableList(10) { Todo(date = date) }
+                MutableList(planCnt) { Todo(date = date) }
             )
     }
 

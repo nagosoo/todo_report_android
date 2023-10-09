@@ -5,4 +5,5 @@
     <string name="보완사항_및_평가">"보 완 사 항    및    평 가"</string>
     <string name="계획_및_일정">"계획 및 일정"</string>
     <string name="수행결과">"수행결과"</string>
+    <string name="작성일자">"작성일자:"</string>
 </resources>
