@@ -8,10 +8,10 @@ object StampUtil {
     val stampList: List<Drawable>
 
     init {
-        stampList = getStampList()
+        stampList = getStampsList()
     }
 
-    private fun getStampList(): List<Drawable> {
+    private fun getStampsList(): List<Drawable> {
         val stampDrawableList = mutableListOf<Drawable>()
         val drawableIds = applicationContext().resources.obtainTypedArray(R.array.stamp_drawables)
 
